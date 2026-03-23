@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub für Nicht-Programmierer — Die kostenlose Lernreise</title>
+<meta name="description" content="GitHub ist nicht was du denkst. Lerne GitHub ohne eine Zeile Code — für Projektmanager, Gründer, Wissenschaftler und alle, die besser zusammenarbeiten wollen.">
+<meta property="og:title" content="GitHub für Nicht-Programmierer">
+<meta property="og:description" content="GitHub ist kein Programmier-Tool. Es ist ein Kollaborationstool. Lerne es in 6 kostenlosen Modulen — ohne Code.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://planck-lab.github.io/github-fuer-nicht-programmierer/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GitHub für Nicht-Programmierer">
+<meta name="twitter:description" content="GitHub ist kein Programmier-Tool. Lerne es ohne Code — kostenlos.">
+<style>
+  :root {
+    --bg: #0d1117; --surface: #161b22; --border: #30363d;
+    --text: #e6edf3; --muted: #7d8590; --accent: #58a6ff;
+    --green: #3fb950; --orange: #d29922;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', system-ui, sans-serif;
+    background: var(--bg); color: var(--text); min-height: 100vh;
+    line-height: 1.7;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Language Switcher */
+  .lang-switch {
+    position: fixed; top: 1rem; right: 1.5rem; z-index: 100;
+    display: flex; gap: 0.25rem; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.2rem;
+  }
+  .lang-btn {
+    padding: 0.3rem 0.6rem; border-radius: 6px; border: none;
+    background: transparent; color: var(--muted); cursor: pointer;
+    font-size: 0.8rem; font-weight: 600; transition: all 0.2s;
+  }
+  .lang-btn.active { background: var(--accent); color: var(--bg); }
+  .lang-btn:hover:not(.active) { color: var(--text); }
+  [lang="de"] .en, [lang="en"] .de { display: none; }
+
+  /* Hero */
+  .hero { text-align: center; padding: 5rem 2rem 2rem; max-width: 720px; margin: 0 auto; }
+  .hero h1 { font-size: 2.4rem; font-weight: 800; line-height: 1.15; margin-bottom: 0.75rem; }
+  .hero .subtitle { font-size: 1.1rem; color: var(--muted); max-width: 560px; margin: 0 auto 1rem; }
+  .badge {
+    display: inline-block; background: rgba(88,166,255,0.12); color: var(--accent);
+    padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 700;
+  }
+
+  /* Sections */
+  section { max-width: 720px; margin: 0 auto; padding: 3rem 2rem; }
+  section h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem; }
+  section h3 { font-size: 1.2rem; font-weight: 700; margin: 1.5rem 0 0.5rem; color: var(--accent); }
+
+  /* Cards */
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.5rem; margin-bottom: 1rem; transition: transform 0.2s;
+  }
+  .card:hover { transform: translateY(-2px); }
+  .card-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
+  .card-muted { color: var(--muted); font-size: 0.85rem; }
+
+  /* Version chaos */
+  .version-list {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.5rem; margin: 1rem 0;
+  }
+  .version-list .file { padding: 0.3rem 0; color: var(--muted); font-size: 0.95rem; }
+  .version-list .file:last-child { color: var(--orange); font-weight: 600; }
+
+  /* Module grid */
+  .modules { display: grid; gap: 0.75rem; }
+  .module-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; display: flex; align-items: center; gap: 1rem;
+    transition: transform 0.2s;
+  }
+  .module-card:hover { transform: translateY(-2px); }
+  .module-card.active { border-color: var(--accent); }
+  .module-card.soon { opacity: 0.5; }
+  .module-num {
+    width: 40px; height: 40px; border-radius: 10px; display: flex;
+    align-items: center; justify-content: center; font-weight: 800;
+    font-size: 1.1rem; flex-shrink: 0;
+  }
+  .module-card.active .module-num { background: var(--accent); color: var(--bg); }
+  .module-card.soon .module-num { background: var(--border); color: var(--muted); }
+  .module-info { flex: 1; }
+  .module-title { font-weight: 700; font-size: 0.95rem; }
+  .module-desc { color: var(--muted); font-size: 0.8rem; margin-top: 0.15rem; }
+  .module-badge {
+    font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 10px; font-weight: 600;
+  }
+  .badge-live { background: rgba(63,185,80,0.15); color: var(--green); }
+  .badge-soon { background: rgba(125,133,144,0.15); color: var(--muted); }
+
+  /* CTA */
+  .cta-box {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 2rem; text-align: center; margin: 2rem 0;
+  }
+  .cta-box h3 { color: var(--text); margin-bottom: 0.5rem; }
+  .cta-box p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+  .btn {
+    display: inline-block; background: var(--accent); color: var(--bg); padding: 0.75rem 2rem;
+    border-radius: 8px; font-weight: 700; font-size: 1rem; border: none; cursor: pointer;
+    transition: opacity 0.2s; text-decoration: none;
+  }
+  .btn:hover { opacity: 0.9; text-decoration: none; }
+
+  /* Email form */
+  .email-form { max-width: 400px; margin: 0 auto; }
+  .email-form input {
+    width: 100%; padding: 0.75rem; font-size: 1rem; border: 1px solid var(--border);
+    border-radius: 8px; background: var(--bg); color: var(--text); margin-bottom: 0.75rem;
+  }
+  .email-form input::placeholder { color: var(--muted); }
+  .email-form button {
+    width: 100%; padding: 0.75rem; font-size: 1rem; font-weight: 700;
+    background: var(--accent); color: var(--bg); border: none; border-radius: 8px; cursor: pointer;
+  }
+  .email-form button:hover { opacity: 0.9; }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent); padding: 1rem 1.5rem; margin: 1rem 0;
+    background: rgba(88,166,255,0.05); border-radius: 0 8px 8px 0;
+    font-size: 1.05rem; font-weight: 600;
+  }
+
+  /* Trust bar */
+  .trust { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 1rem; }
+
+  /* Footer */
+  footer {
+    text-align: center; padding: 2rem; color: var(--muted); font-size: 0.8rem;
+    border-top: 1px solid var(--border); max-width: 720px; margin: 2rem auto 0;
+  }
+
+  /* Highlight */
+  .highlight { color: var(--accent); font-weight: 600; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.8rem; }
+    .hero { padding: 4rem 1.25rem 1.5rem; }
+    section { padding: 2rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Language Switcher -->
+<div class="lang-switch">
+  <button class="lang-btn active" onclick="setLang('de')">DE</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <h1>
+    <span class="de">GitHub ist nicht was du denkst.</span>
+    <span class="en">GitHub is not what you think.</span>
+  </h1>
+  <p class="subtitle">
+    <span class="de">Für alle, die nicht programmieren — aber besser zusammenarbeiten wollen.</span>
+    <span class="en">For everyone who doesn't code — but wants to collaborate better.</span>
+  </p>
+  <span class="badge">
+    <span class="de">Kostenlos · 6 Module · DE + EN</span>
+    <span class="en">Free · 6 Modules · EN + DE</span>
+  </span>
+</div>
+
+<!-- Problem -->
+<section>
+  <h2>
+    <span class="de">Das Problem</span>
+    <span class="en">The Problem</span>
+  </h2>
+  <p>
+    <span class="de">Du kennst das. Drei Leute arbeiten am gleichen Dokument:</span>
+    <span class="en">You know this. Three people working on the same document:</span>
+  </p>
+  <div class="version-list">
+    <div class="file">📄 Projektplan.docx</div>
+    <div class="file">📄 Projektplan_v2.docx</div>
+    <div class="file">📄 Projektplan_v2_überarbeitet.docx</div>
+    <div class="file">📄 Projektplan_v3_final.docx</div>
+    <div class="file">📄 Projektplan_v3_final_FINAL.docx</div>
+    <div class="file">📄 Projektplan_v3_final_FINAL_JAN.docx</div>
+  </div>
+  <p>
+    <span class="de">Niemand weiß, welche Version zählt. Änderungen werden überschrieben. Feedback geht verloren.</span>
+    <span class="en">Nobody knows which version counts. Changes get overwritten. Feedback is lost.</span>
+  </p>
+  <p style="margin-top: 1rem;">
+    <span class="de">Und du denkst, <span class="highlight">GitHub ist nichts für dich</span>, weil du kein Programmierer bist.</span>
+    <span class="en">And you think <span class="highlight">GitHub is not for you</span> because you're not a programmer.</span>
+  </p>
+</section>
+
+<!-- Truth -->
+<section>
+  <h2>
+    <span class="de">Die Wahrheit</span>
+    <span class="en">The Truth</span>
+  </h2>
+  <p style="margin-bottom: 1.5rem;">
+    <span class="de">GitHub ist kein Programmier-Tool. GitHub ist ein <strong>Kollaborations- und Versionierungstool</strong>. Und der Beweis:</span>
+    <span class="en">GitHub is not a coding tool. GitHub is a <strong>collaboration and version control tool</strong>. The proof:</span>
+  </p>
+
+  <a href="https://github.com/bundestag/gesetze" target="_blank" style="text-decoration: none; color: inherit;">
+    <div class="card">
+      <div class="card-title">🏛️ <span class="de">Deutsche Bundesgesetze</span><span class="en">German Federal Laws</span></div>
+      <p class="card-muted">
+        <span class="de">Alle Bundesgesetze als versionierte Textdateien. Jede Änderung nachvollziehbar — wann, was, warum.</span>
+        <span class="en">All federal laws as versioned text files. Every change traceable — when, what, why.</span>
+      </p>
+    </div>
+  </a>
+
+  <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank" style="text-decoration: none; color: inherit;">
+    <div class="card">
+      <div class="card-title">🔬 <span class="de">COVID-19-Forschungsdaten</span><span class="en">COVID-19 Research Data</span></div>
+      <p class="card-muted">
+        <span class="de">Die zentrale Datenquelle der Johns Hopkins University — genutzt von Regierungen und Medien weltweit. Keine Zeile Code.</span>
+        <span class="en">The central data source from Johns Hopkins University — used by governments and media worldwide. Not a single line of code.</span>
+      </p>
+    </div>
+  </a>
+
+  <blockquote>
+    <span class="de">Überleg mal: Wo hast du selbst ein Versionsproblem?</span>
+    <span class="en">Think about it: Where do you have a versioning problem?</span>
+  </blockquote>
+</section>
+
+<!-- What you'll learn -->
+<section>
+  <h2>
+    <span class="de">Was du hier lernst</span>
+    <span class="en">What you'll learn</span>
+  </h2>
+
+  <h3><span class="de">📁 Ein Repository ist ein Projektordner mit Gedächtnis</span><span class="en">📁 A repository is a project folder with memory</span></h3>
+  <p>
+    <span class="de">Stell dir einen normalen Projektordner vor — aber jede Änderung wird gespeichert. Wer hat was geändert? Wann? Warum? Wie ein <strong>Logbuch für dein Projekt</strong>.</span>
+    <span class="en">Imagine a normal project folder — but every change is saved. Who changed what? When? Why? Like a <strong>logbook for your project</strong>.</span>
+  </p>
+
+  <h3><span class="de">🔄 Version Control statt Datei-Chaos</span><span class="en">🔄 Version control instead of file chaos</span></h3>
+  <p>
+    <span class="de"><strong>Eine</strong> Datei. Jede Änderung als eigener Schritt gespeichert — mit Zeitstempel, Name und Beschreibung. Das nennt man einen <strong>Commit</strong>. Du kannst jederzeit zurückspulen.</span>
+    <span class="en"><strong>One</strong> file. Every change saved as a separate step — with timestamp, name, and description. That's called a <strong>commit</strong>. You can rewind anytime.</span>
+  </p>
+
+  <h3><span class="de">🤝 Zusammenarbeit ohne E-Mail-Ping-Pong</span><span class="en">🤝 Collaboration without email ping-pong</span></h3>
+  <p>
+    <span class="de">Feedback direkt an der Stelle. Änderungsvorschläge die man annehmen oder ablehnen kann. Alles transparent, alles nachvollziehbar.</span>
+    <span class="en">Feedback right where it matters. Change suggestions you can accept or reject. Everything transparent, everything traceable.</span>
+  </p>
+</section>
+
+<!-- Challenge CTA -->
+<section>
+  <div class="cta-box">
+    <h3>
+      <span class="de">🛠️ Hands-On Challenge</span>
+      <span class="en">🛠️ Hands-On Challenge</span>
+    </h3>
+    <p>
+      <span class="de">In 20 Minuten erstellst du dein erstes GitHub-Repository. Ohne Code, ohne Vorkenntnisse. Nur ein Browser.</span>
+      <span class="en">Create your first GitHub repository in 20 minutes. No code, no prerequisites. Just a browser.</span>
+    </p>
+    <a href="challenge.html" class="btn">
+      <span class="de">Challenge starten →</span>
+      <span class="en">Start Challenge →</span>
+    </a>
+  </div>
+</section>
+
+<!-- Email Signup 1 -->
+<section>
+  <div class="cta-box">
+    <h3>
+      <span class="de">📬 Modul 2 nicht verpassen</span>
+      <span class="en">📬 Don't miss Module 2</span>
+    </h3>
+    <p>
+      <span class="de">Kein Spam. Nur ein Hinweis wenn das nächste Modul rauskommt.</span>
+      <span class="en">No spam. Just a heads-up when the next module drops.</span>
+    </p>
+    <form action="https://formspree.io/f/DEINE-FORM-ID" method="POST" class="email-form">
+      <input type="email" name="email" placeholder="jan@beispiel.de" required>
+      <button type="submit">
+        <span class="de">Sag mir wenn Modul 2 rauskommt →</span>
+        <span class="en">Notify me when Module 2 drops →</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- Modules -->
+<section>
+  <h2>
+    <span class="de">Die Lernreise</span>
+    <span class="en">The Learning Path</span>
+  </h2>
+  <div class="modules">
+    <a href="#" class="module-card active" style="text-decoration:none; color:inherit;">
+      <div class="module-num">1</div>
+      <div class="module-info">
+        <div class="module-title"><span class="de">GitHub ist nicht was du denkst</span><span class="en">GitHub is not what you think</span></div>
+        <div class="module-desc"><span class="de">Repository, Version Control, erste Schritte</span><span class="en">Repository, version control, first steps</span></div>
+      </div>
+      <span class="module-badge badge-live">✅ Live</span>
+    </a>
+    <div class="module-card soon">
+      <div class="module-num">2</div>
+      <div class="module-info">
+        <div class="module-title"><span class="de">Schluss mit v3_final_FINAL</span><span class="en">No more v3_final_FINAL</span></div>
+        <div class="module-desc"><span class="de">Dateien hochladen, ändern, Historie verstehen</span><span class="en">Upload files, make changes, understand history</span></div>
+      </div>
+      <span class="module-badge badge-soon"><span class="de">Bald</span><span class="en">Soon</span></span>
+    </div>
+    <div class="module-card soon">
+      <div class="module-num">3</div>
+      <div class="module-info">
+        <div class="module-title"><span class="de">Projekte sichtbar machen</span><span class="en">Make projects visible</span></div>
+        <div class="module-desc"><span class="de">Issues & Projects als Kanban-Board</span><span class="en">Issues & Projects as Kanban board</span></div>
+      </div>
+      <span class="module-badge badge-soon"><span class="de">Bald</span><span class="en">Soon</span></span>
+    </div>
+    <div class="module-card soon">
+      <div class="module-num">4</div>
+      <div class="module-info">
+        <div class="module-title"><span class="de">Feedback ohne E-Mail-Ping-Pong</span><span class="en">Feedback without email ping-pong</span></div>
+        <div class="module-desc"><span class="de">Pull Requests für Texte, Konzepte, Policies</span><span class="en">Pull requests for texts, concepts, policies</span></div>
+      </div>
+      <span class="module-badge badge-soon"><span class="de">Bald</span><span class="en">Soon</span></span>
+    </div>
+    <div class="module-card soon">
+      <div class="module-num">5</div>
+      <div class="module-info">
+        <div class="module-title"><span class="de">In 10 Minuten live</span><span class="en">Live in 10 minutes</span></div>
+        <div class="module-desc"><span class="de">GitHub Pages — deine eigene Seite</span><span class="en">GitHub Pages — your own website</span></div>
+      </div>
+      <span class="module-badge badge-soon"><span class="de">Bald</span><span class="en">Soon</span></span>
+    </div>
+    <div class="module-card soon">
+      <div class="module-num">6</div>
+      <div class="module-info">
+        <div class="module-title"><span class="de">Dein GitHub-Gameplan</span><span class="en">Your GitHub gameplan</span></div>
+        <div class="module-desc"><span class="de">Konkreter Anwendungsfall aus deinem Alltag</span><span class="en">Concrete use case from your daily work</span></div>
+      </div>
+      <span class="module-badge badge-soon"><span class="de">Bald</span><span class="en">Soon</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof -->
+<section>
+  <div class="trust">
+    <span class="de"><!-- [Nach Beta-Phase: Teilnehmerzahl + Testimonials ergänzen] --></span>
+    <span class="en"><!-- [After beta: add participant count + testimonials] --></span>
+  </div>
+</section>
+
+<!-- Objection Handling -->
+<section>
+  <div class="card" style="text-align: center;">
+    <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;">
+      <span class="de">Komplett kostenlos. Kein Upsell, kein Haken.</span>
+      <span class="en">Completely free. No upsell, no catch.</span>
+    </p>
+    <p class="card-muted">
+      <span class="de">Fragen? <a href="https://linkedin.com/in/janrummel">Schreib mir auf LinkedIn.</a></span>
+      <span class="en">Questions? <a href="https://linkedin.com/in/janrummel">Message me on LinkedIn.</a></span>
+    </p>
+  </div>
+</section>
+
+<!-- About -->
+<section>
+  <h2>
+    <span class="de">Über mich</span>
+    <span class="en">About me</span>
+  </h2>
+  <p>
+    <span class="de">Ich bin <strong>Jan</strong> — Ingenieur, kein Programmierer. Ich habe GitHub jahrelang ignoriert, weil ich dachte, es sei nur für Developer. Das war ein Fehler. Heute nutze ich GitHub für Projektdokumentation, Wissensmanagement und Zusammenarbeit — ohne eine Zeile Code.</span>
+    <span class="en">I'm <strong>Jan</strong> — engineer, not a programmer. I ignored GitHub for years because I thought it was only for developers. That was a mistake. Today I use GitHub for project documentation, knowledge management, and collaboration — without writing a single line of code.</span>
+  </p>
+  <p style="margin-top: 0.5rem; color: var(--muted); font-size: 0.9rem;">
+    <span class="de">Teil des <a href="https://janrummel.github.io/ai-learning/">AI Learning</a> Ökosystems.</span>
+    <span class="en">Part of the <a href="https://janrummel.github.io/ai-learning/">AI Learning</a> ecosystem.</span>
+  </p>
+</section>
+
+<!-- Email Signup 2 -->
+<section>
+  <div class="cta-box">
+    <h3>
+      <span class="de">📬 Bereit für Modul 2?</span>
+      <span class="en">📬 Ready for Module 2?</span>
+    </h3>
+    <p>
+      <span class="de">Trag dich ein — ich schicke dir eine Nachricht wenn es weitergeht.</span>
+      <span class="en">Sign up — I'll let you know when the next module is ready.</span>
+    </p>
+    <form action="https://formspree.io/f/DEINE-FORM-ID" method="POST" class="email-form">
+      <input type="email" name="email" placeholder="jan@beispiel.de" required>
+      <button type="submit">
+        <span class="de">Sag mir wenn Modul 2 rauskommt →</span>
+        <span class="en">Notify me when Module 2 drops →</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <a href="https://github.com/planck-lab/github-fuer-nicht-programmierer">
+    <span class="de">Quellcode auf GitHub</span>
+    <span class="en">Source on GitHub</span>
+  </a>
+  · Made with ❤️
+  <span class="de">und Markdown</span>
+  <span class="en">and Markdown</span>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  localStorage.setItem('lang', lang);
+}
+// Restore
+const saved = localStorage.getItem('lang');
+if (saved) setLang(saved);
+</script>
+
+</body>
+</html>
