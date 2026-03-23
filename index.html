@@ -10,14 +10,13 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://planck-lab.github.io/github-fuer-nicht-programmierer/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GitHub für Nicht-Programmierer">
-<meta name="twitter:description" content="GitHub ist kein Programmier-Tool. Lerne es ohne Code — kostenlos.">
 <link rel="stylesheet" href="style.css">
 <style>
   .hero { text-align: center; padding: 5rem 2rem 2rem; max-width: 720px; margin: 0 auto; }
   .hero h1 { font-size: 2.4rem; font-weight: 800; line-height: 1.15; margin-bottom: 0.75rem; }
   .hero .subtitle { font-size: 1.1rem; color: var(--muted); max-width: 560px; margin: 0 auto 1rem; }
   .badge { display: inline-block; background: rgba(88,166,255,0.12); color: var(--accent); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 700; }
+  .hero-cta { margin-top: 1.5rem; }
   section { max-width: 720px; margin: 0 auto; padding: 3rem 2rem; }
   section h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem; }
   section h3 { font-size: 1.2rem; font-weight: 700; margin: 1.5rem 0 0.5rem; color: var(--accent); }
@@ -31,10 +30,25 @@
   .cta-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; text-align: center; margin: 2rem 0; }
   .cta-box h3 { color: var(--text); margin-bottom: 0.5rem; }
   .cta-box p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+  /* Journey Map */
+  .journey-map { display: flex; align-items: center; justify-content: center; gap: 0.3rem; flex-wrap: wrap; margin: 2rem 0; }
+  .journey-step { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+  .journey-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--surface); border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; transition: all 0.2s; }
+  .journey-step:first-child .journey-icon { border-color: var(--accent); background: rgba(88,166,255,0.15); }
+  .journey-label { font-size: 0.65rem; color: var(--muted); text-align: center; max-width: 70px; line-height: 1.2; }
+  .journey-arrow { color: var(--border); font-size: 1.2rem; margin: 0 0.15rem; padding-bottom: 1.2rem; }
+  .journey-time { font-size: 0.55rem; color: var(--border); }
+  /* FAQ */
+  .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 0.75rem; }
+  .faq-q { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem; }
+  .faq-a { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
   @media (max-width: 600px) {
     .hero h1 { font-size: 1.8rem; }
     .hero { padding: 4rem 1.25rem 1.5rem; }
     section { padding: 2rem 1.25rem; }
+    .journey-map { gap: 0.15rem; }
+    .journey-icon { width: 38px; height: 38px; font-size: 1rem; }
+    .journey-label { font-size: 0.55rem; max-width: 55px; }
   }
 </style>
 </head>
@@ -56,10 +70,65 @@
     <span class="en">For everyone who doesn't code — but wants to collaborate better.</span>
   </p>
   <span class="badge">
-    <span class="de">Kostenlos · 6 Module · DE + EN</span>
-    <span class="en">Free · 6 Modules · EN + DE</span>
+    <span class="de">Kostenlos · 6 Module · ~2,5 Stunden · DE + EN</span>
+    <span class="en">Free · 6 Modules · ~2.5 hours · EN + DE</span>
   </span>
+  <div class="hero-cta">
+    <a href="modul1.html" class="btn">
+      <span class="de">Direkt starten — Modul 1 in 20 Min →</span>
+      <span class="en">Start now — Module 1 in 20 min →</span>
+    </a>
+  </div>
 </div>
+
+<!-- Journey Map / Big Picture -->
+<section style="padding-top: 1rem;">
+  <h2 style="text-align:center;">
+    <span class="de">Dein Weg in 6 Schritten</span>
+    <span class="en">Your path in 6 steps</span>
+  </h2>
+  <div class="journey-map">
+    <div class="journey-step">
+      <div class="journey-icon">📁</div>
+      <div class="journey-label"><span class="de">Erstes Repo</span><span class="en">First Repo</span></div>
+      <div class="journey-time">20 min</div>
+    </div>
+    <div class="journey-arrow">→</div>
+    <div class="journey-step">
+      <div class="journey-icon">📝</div>
+      <div class="journey-label"><span class="de">Versionen</span><span class="en">Versions</span></div>
+      <div class="journey-time">25 min</div>
+    </div>
+    <div class="journey-arrow">→</div>
+    <div class="journey-step">
+      <div class="journey-icon">📋</div>
+      <div class="journey-label"><span class="de">Projekte</span><span class="en">Projects</span></div>
+      <div class="journey-time">25 min</div>
+    </div>
+    <div class="journey-arrow">→</div>
+    <div class="journey-step">
+      <div class="journey-icon">💬</div>
+      <div class="journey-label"><span class="de">Feedback</span><span class="en">Feedback</span></div>
+      <div class="journey-time">30 min</div>
+    </div>
+    <div class="journey-arrow">→</div>
+    <div class="journey-step">
+      <div class="journey-icon">🌐</div>
+      <div class="journey-label"><span class="de">Website live</span><span class="en">Website live</span></div>
+      <div class="journey-time">20 min</div>
+    </div>
+    <div class="journey-arrow">→</div>
+    <div class="journey-step">
+      <div class="journey-icon">🎯</div>
+      <div class="journey-label"><span class="de">Gameplan</span><span class="en">Gameplan</span></div>
+      <div class="journey-time">30 min</div>
+    </div>
+  </div>
+  <p style="text-align:center; color:var(--muted); font-size:0.85rem;">
+    <span class="de">Alles im Browser · Kein Code · Kein Setup · Dein Tempo</span>
+    <span class="en">All in the browser · No code · No setup · Your pace</span>
+  </p>
+</section>
 
 <!-- Problem -->
 <section>
@@ -89,7 +158,7 @@
   </p>
 </section>
 
-<!-- Truth -->
+<!-- Truth + CTA #2 -->
 <section>
   <h2>
     <span class="de">Die Wahrheit</span>
@@ -104,8 +173,8 @@
     <div class="card">
       <div class="card-title">🏛️ <span class="de">Deutsche Bundesgesetze</span><span class="en">German Federal Laws</span></div>
       <p class="card-muted">
-        <span class="de">Alle Bundesgesetze als versionierte Textdateien. Jede Änderung nachvollziehbar — wann, was, warum.</span>
-        <span class="en">All federal laws as versioned text files. Every change traceable — when, what, why.</span>
+        <span class="de">Alle Bundesgesetze als versionierte Textdateien. Von Juristen gepflegt, nicht von Programmierern.</span>
+        <span class="en">All federal laws as versioned text files. Maintained by lawyers, not programmers.</span>
       </p>
     </div>
   </a>
@@ -114,71 +183,93 @@
     <div class="card">
       <div class="card-title">🔬 <span class="de">COVID-19-Forschungsdaten</span><span class="en">COVID-19 Research Data</span></div>
       <p class="card-muted">
-        <span class="de">Die zentrale Datenquelle der Johns Hopkins University — genutzt von Regierungen und Medien weltweit. Keine Zeile Code.</span>
-        <span class="en">The central data source from Johns Hopkins University — used by governments and media worldwide. Not a single line of code.</span>
+        <span class="de">Die zentrale Datenquelle der Johns Hopkins University — genutzt von Regierungen und Medien weltweit.</span>
+        <span class="en">The central data source from Johns Hopkins University — used by governments and media worldwide.</span>
       </p>
     </div>
   </a>
 
-  <blockquote>
-    <span class="de">Überleg mal: Wo hast du selbst ein Versionsproblem?</span>
-    <span class="en">Think about it: Where do you have a versioning problem?</span>
-  </blockquote>
+  <div style="text-align:center; margin-top: 1.5rem;">
+    <a href="modul1.html" class="btn" style="background: var(--green); color: var(--bg);">
+      <span class="de">Überzeugt? Starte Modul 1 →</span>
+      <span class="en">Convinced? Start Module 1 →</span>
+    </a>
+  </div>
 </section>
 
 <!-- What you'll learn -->
 <section>
   <h2>
-    <span class="de">Was du hier lernst</span>
-    <span class="en">What you'll learn</span>
+    <span class="de">Was du danach kannst</span>
+    <span class="en">What you'll be able to do</span>
   </h2>
 
-  <h3><span class="de">📁 Ein Repository ist ein Projektordner mit Gedächtnis</span><span class="en">📁 A repository is a project folder with memory</span></h3>
+  <h3><span class="de">📁 Projekte organisieren mit Gedächtnis</span><span class="en">📁 Organize projects with memory</span></h3>
   <p>
-    <span class="de">Stell dir einen normalen Projektordner vor — aber jede Änderung wird gespeichert. Wer hat was geändert? Wann? Warum? Wie ein <strong>Logbuch für dein Projekt</strong>.</span>
-    <span class="en">Imagine a normal project folder — but every change is saved. Who changed what? When? Why? Like a <strong>logbook for your project</strong>.</span>
+    <span class="de">Jede Änderung gespeichert. Wer hat was geändert, wann und warum. Wie ein <strong>Logbuch für dein Projekt</strong>.</span>
+    <span class="en">Every change saved. Who changed what, when, and why. Like a <strong>logbook for your project</strong>.</span>
   </p>
 
-  <h3><span class="de">🔄 Version Control statt Datei-Chaos</span><span class="en">🔄 Version control instead of file chaos</span></h3>
+  <h3><span class="de">🔄 Nie wieder v3_final_FINAL</span><span class="en">🔄 No more v3_final_FINAL</span></h3>
   <p>
-    <span class="de"><strong>Eine</strong> Datei. Jede Änderung als eigener Schritt gespeichert — mit Zeitstempel, Name und Beschreibung. Das nennt man einen <strong>Commit</strong>. Du kannst jederzeit zurückspulen.</span>
-    <span class="en"><strong>One</strong> file. Every change saved as a separate step — with timestamp, name, and description. That's called a <strong>commit</strong>. You can rewind anytime.</span>
+    <span class="de"><strong>Eine</strong> Datei. Jede Version gespeichert. Du kannst jederzeit zurückspulen.</span>
+    <span class="en"><strong>One</strong> file. Every version saved. You can rewind anytime.</span>
   </p>
 
-  <h3><span class="de">🤝 Zusammenarbeit ohne E-Mail-Ping-Pong</span><span class="en">🤝 Collaboration without email ping-pong</span></h3>
+  <h3><span class="de">💬 Feedback direkt am Dokument</span><span class="en">💬 Feedback right on the document</span></h3>
   <p>
-    <span class="de">Feedback direkt an der Stelle. Änderungsvorschläge die man annehmen oder ablehnen kann. Alles transparent, alles nachvollziehbar.</span>
-    <span class="en">Feedback right where it matters. Change suggestions you can accept or reject. Everything transparent, everything traceable.</span>
+    <span class="de">Statt E-Mail-Ping-Pong: Kommentare direkt an der Zeile die sich ändern soll.</span>
+    <span class="en">Instead of email ping-pong: comments right on the line that needs to change.</span>
+  </p>
+
+  <h3><span class="de">🌐 Eigene Website in 10 Minuten</span><span class="en">🌐 Your own website in 10 minutes</span></h3>
+  <p>
+    <span class="de">Kostenlose Website aus deinem Projektordner. Ohne Hosting, ohne Code.</span>
+    <span class="en">Free website from your project folder. No hosting, no code.</span>
   </p>
 </section>
 
-<!-- CTA -->
+<!-- FAQ / Objection Handling -->
 <section>
-  <div class="cta-box">
-    <h3>
-      <span class="de">🚀 Bereit? 6 Module, komplett kostenlos.</span>
-      <span class="en">🚀 Ready? 6 modules, completely free.</span>
-    </h3>
-    <p>
-      <span class="de">Kein Account nötig. Kein Upsell. Einfach loslegen.</span>
-      <span class="en">No account needed. No upsell. Just start.</span>
-    </p>
-    <a href="curriculum.html" class="btn">
-      <span class="de">Zur Modulübersicht →</span>
-      <span class="en">View curriculum →</span>
-    </a>
+  <h2>
+    <span class="de">„Aber ist das nicht zu technisch?"</span>
+    <span class="en">"But isn't that too technical?"</span>
+  </h2>
+
+  <div class="faq-item">
+    <div class="faq-q"><span class="de">❓ Ich bin nicht technisch genug</span><span class="en">❓ I'm not technical enough</span></div>
+    <div class="faq-a"><span class="de">Du brauchst nur einen Browser. Kein Terminal, kein Code, keine Installation. Wenn du eine E-Mail schreiben kannst, kannst du das hier.</span><span class="en">You only need a browser. No terminal, no code, no installation. If you can write an email, you can do this.</span></div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><span class="de">❓ GitHub ist doch für Programmierer</span><span class="en">❓ GitHub is for programmers</span></div>
+    <div class="faq-a"><span class="de">Deutsche Bundesgesetze werden auf GitHub verwaltet. Von Juristen, nicht von Devs. Die Johns Hopkins University hat COVID-Daten dort publiziert. GitHub ist ein Kollaborationstool.</span><span class="en">German federal laws are managed on GitHub. By lawyers, not devs. Johns Hopkins published COVID data there. GitHub is a collaboration tool.</span></div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><span class="de">❓ Wir haben schon Google Drive / SharePoint</span><span class="en">❓ We already have Google Drive / SharePoint</span></div>
+    <div class="faq-a"><span class="de">Google Drive zeigt dir die Datei. GitHub zeigt dir jede Änderung — wer, wann, warum. Und du kannst jede Version wiederherstellen.</span><span class="en">Google Drive shows you the file. GitHub shows you every change — who, when, why. And you can restore any version.</span></div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><span class="de">❓ Mein Team wird das nicht mitmachen</span><span class="en">❓ My team won't go along with this</span></div>
+    <div class="faq-a"><span class="de">Modul 6 zeigt dir genau, wie du dein Team überzeugst. Spoiler: Starte klein, mit einem Dokument und zwei Leuten.</span><span class="en">Module 6 shows you exactly how to convince your team. Spoiler: Start small, with one document and two people.</span></div>
   </div>
 </section>
 
 <!-- About -->
 <section>
   <h2>
-    <span class="de">Über mich</span>
-    <span class="en">About me</span>
+    <span class="de">Wer steckt dahinter?</span>
+    <span class="en">Who's behind this?</span>
   </h2>
   <p>
-    <span class="de">Ich bin <strong>Jan</strong> — Ingenieur, kein Programmierer. Ich habe GitHub jahrelang ignoriert, weil ich dachte, es sei nur für Developer. Das war ein Fehler. Heute nutze ich GitHub für Projektdokumentation, Wissensmanagement und Zusammenarbeit — ohne eine Zeile Code.</span>
-    <span class="en">I'm <strong>Jan</strong> — engineer, not a programmer. I ignored GitHub for years because I thought it was only for developers. That was a mistake. Today I use GitHub for project documentation, knowledge management, and collaboration — without writing a single line of code.</span>
+    <span class="de">Ich bin <strong>Jan</strong> — Ingenieur, kein Programmierer. Ich habe GitHub jahrelang ignoriert, weil ich dachte, es sei nur für Developer. Das war ein Fehler.</span>
+    <span class="en">I'm <strong>Jan</strong> — engineer, not a programmer. I ignored GitHub for years because I thought it was only for developers. That was a mistake.</span>
+  </p>
+  <p style="margin-top: 0.75rem;">
+    <span class="de">Heute manage ich damit Projektdokumentationen im Team, tracke Aufgaben mit Issues und versioniere Konzeptpapiere. <strong>Vorher:</strong> 47 E-Mails pro Review-Runde. <strong>Nachher:</strong> 1 Pull Request.</span>
+    <span class="en">Today I manage project documentation with my team, track tasks with Issues, and version concept papers. <strong>Before:</strong> 47 emails per review round. <strong>After:</strong> 1 Pull Request.</span>
   </p>
   <p style="margin-top: 0.5rem; color: var(--muted); font-size: 0.9rem;">
     <span class="de">Teil des <a href="https://janrummel.github.io/ai-learning/">AI Learning</a> Ökosystems.</span>
@@ -186,28 +277,35 @@
   </p>
 </section>
 
-<!-- Objection -->
+<!-- Final CTA -->
 <section>
-  <div class="card" style="text-align: center;">
-    <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;">
-      <span class="de">Komplett kostenlos. Kein Upsell, kein Haken.</span>
-      <span class="en">Completely free. No upsell, no catch.</span>
+  <div class="cta-box">
+    <h3>
+      <span class="de">🚀 Bereit? Modul 1 dauert 20 Minuten.</span>
+      <span class="en">🚀 Ready? Module 1 takes 20 minutes.</span>
+    </h3>
+    <p>
+      <span class="de">Komplett kostenlos. Kein Account bei uns nötig. Kein Upsell.</span>
+      <span class="en">Completely free. No account with us needed. No upsell.</span>
     </p>
-    <p class="card-muted">
-      <span class="de">Fragen? <a href="https://linkedin.com/in/janrummel">Schreib mir auf LinkedIn.</a></span>
-      <span class="en">Questions? <a href="https://linkedin.com/in/janrummel">Message me on LinkedIn.</a></span>
-    </p>
+    <div style="display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;">
+      <a href="modul1.html" class="btn">
+        <span class="de">Modul 1 starten →</span>
+        <span class="en">Start Module 1 →</span>
+      </a>
+      <a href="curriculum.html" class="btn" style="background: var(--surface); color: var(--text); border: 1px solid var(--border);">
+        <span class="de">Alle Module ansehen</span>
+        <span class="en">View all modules</span>
+      </a>
+    </div>
   </div>
 </section>
 
 <footer>
   <a href="https://github.com/planck-lab/github-fuer-nicht-programmierer">
-    <span class="de">Quellcode auf GitHub</span>
-    <span class="en">Source on GitHub</span>
-  </a>
-  · Made with ❤️
-  <span class="de">und Markdown</span>
-  <span class="en">and Markdown</span>
+    <span class="de">Quellcode auf GitHub</span><span class="en">Source on GitHub</span>
+  </a> · Made with ❤️ <span class="de">und Markdown</span><span class="en">and Markdown</span>
+  <br><span style="font-size:0.7rem;"><span class="de">Fragen? <a href="https://linkedin.com/in/janrummel">Schreib mir auf LinkedIn.</a></span><span class="en">Questions? <a href="https://linkedin.com/in/janrummel">Message me on LinkedIn.</a></span></span>
 </footer>
 
 <script>
