@@ -1,4 +1,6 @@
-theme: cayman
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+  - jekyll-remote-theme
 title: "GitHub für Nicht-Programmierer"
 description: "Die kostenlose Lernreise für alle, die nicht programmieren."
 baseurl: "/github-fuer-nicht-programmierer"
@@ -6,4 +8,3 @@ url: "https://planck-lab.github.io"
 exclude:
   - docs/
   - LICENSE
-  - README.md
