@@ -1,6 +1,6 @@
 :root {
   --bg: #0d1117; --surface: #161b22; --border: #30363d;
-  --text: #e6edf3; --muted: #7d8590; --accent: #58a6ff;
+  --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff;
   --green: #3fb950; --orange: #d29922;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
