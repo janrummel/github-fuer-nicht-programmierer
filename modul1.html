@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modul 1 — GitHub ist nicht was du denkst</title>
+<meta name="description" content="Erstelle dein erstes GitHub-Repository in 20 Minuten. Ohne Code, ohne Vorkenntnisse. Nur ein Browser.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .fast-lane { background: rgba(210,153,34,0.1); border: 1px solid rgba(210,153,34,0.3); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--orange); }
+  .template { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; font-family: 'SF Mono', Consolas, monospace; font-size: 0.85rem; white-space: pre-wrap; overflow-x: auto; position: relative; }
+  .copy-btn { position: absolute; top: 0.5rem; right: 0.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.3rem 0.6rem; color: var(--muted); cursor: pointer; font-size: 0.75rem; }
+  .copy-btn:hover { color: var(--text); }
+</style>
+</head>
+<body>
+<div class="lang-switch">
+  <button class="lang-btn active" onclick="setLang('de')">DE</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+</div>
+<div class="container">
+<a href="curriculum.html" class="back-link"><span class="de">← Modulübersicht</span><span class="en">← Curriculum</span></a>
+
+<h1><span class="de">Modul 1: GitHub ist nicht was du denkst</span><span class="en">Module 1: GitHub is not what you think</span></h1>
+<p class="subtitle"><span class="de">Dein erstes Repository in 20 Minuten. Nur ein Browser nötig.</span><span class="en">Your first repository in 20 minutes. Only a browser needed.</span></p>
+
+<div class="fast-lane">
+  <span class="de">⚡ <strong>Fast Lane:</strong> Du hast schon einen GitHub-Account? <a href="#step-1">Starte bei Schritt 1 →</a></span>
+  <span class="en">⚡ <strong>Fast Lane:</strong> Already have a GitHub account? <a href="#step-1">Start at Step 1 →</a></span>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num" style="background: var(--orange);">0</div><div class="step-title"><span class="de">Vorbereitung: GitHub-Account anlegen</span><span class="en">Preparation: Create a GitHub account</span></div></div>
+  <ol>
+    <li><span class="de">Öffne <a href="https://github.com/signup" target="_blank">github.com/signup</a></span><span class="en">Open <a href="https://github.com/signup" target="_blank">github.com/signup</a></span></li>
+    <li><span class="de">E-Mail, Passwort, Benutzername wählen (Tipp: <code>vorname-nachname</code>)</span><span class="en">Enter email, password, choose username (tip: <code>firstname-lastname</code>)</span></li>
+    <li><span class="de">Bestätigungscode aus E-Mail eingeben</span><span class="en">Enter verification code from email</span></li>
+    <li><span class="de">Personalisierung überspringen ("Skip personalization")</span><span class="en">Skip personalization</span></li>
+  </ol>
+  <div class="checkpoint"><span class="de">✅ Du bist eingeloggt und siehst dein Dashboard.</span><span class="en">✅ You're logged in and see your dashboard.</span></div>
+</div>
+
+<div class="step" id="step-1">
+  <div class="step-header"><div class="step-num">1</div><div class="step-title"><span class="de">Dein erstes Repository erstellen</span><span class="en">Create your first repository</span></div></div>
+  <ol>
+    <li><span class="de">Klicke <strong>„+"</strong> oben rechts → <strong>„New repository"</strong></span><span class="en">Click <strong>"+"</strong> top right → <strong>"New repository"</strong></span></li>
+    <li><span class="de"><strong>Repository name:</strong> <code>mein-erstes-projekt</code></span><span class="en"><strong>Repository name:</strong> <code>my-first-project</code></span></li>
+    <li><span class="de"><strong>Description:</strong> <code>Mein erstes GitHub-Repository — ein Experiment ohne Code.</code></span><span class="en"><strong>Description:</strong> <code>My first GitHub repository — an experiment without code.</code></span></li>
+    <li><span class="de">Wähle <strong>Public</strong></span><span class="en">Choose <strong>Public</strong></span></li>
+    <li><span class="de">✅ Häkchen bei <strong>„Add a README file"</strong></span><span class="en">✅ Check <strong>"Add a README file"</strong></span></li>
+    <li><span class="de">Klicke <strong>„Create repository"</strong></span><span class="en">Click <strong>"Create repository"</strong></span></li>
+  </ol>
+  <div class="checkpoint"><span class="de">✅ Du siehst dein Repository mit einer README.md Datei.</span><span class="en">✅ You see your repository with a README.md file.</span></div>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">2</div><div class="step-title"><span class="de">README.md bearbeiten</span><span class="en">Edit your README.md</span></div></div>
+  <ol>
+    <li><span class="de">Klicke auf <strong>README.md</strong> → Stift-Icon ✏️</span><span class="en">Click <strong>README.md</strong> → pencil icon ✏️</span></li>
+    <li><span class="de">Lösche den Inhalt und kopiere dieses Template:</span><span class="en">Delete the content and paste this template:</span></li>
+  </ol>
+  <div class="template" id="readme-template"># Mein erstes Projekt
+
+## Worum geht es?
+Dieses Repository ist mein erster Gehversuch auf GitHub.
+Ich bin kein Programmierer — ich nutze GitHub als Organisationstool.
+
+## Was ist hier drin?
+- 📄 Diese README als Startseite
+- 📁 Dokumente und Notizen
+- 📝 Alles versioniert — jede Änderung wird gespeichert
+
+## Über mich
+Ich bin [DEIN NAME] und arbeite als [DEIN BERUF].
+
+## Was ich gelernt habe
+- Ein Repository ist ein Projektordner mit Gedächtnis
+- Version Control löst das "v3_final_FINAL"-Problem
+- GitHub ist nicht nur für Code
+    <button class="copy-btn" onclick="copyTemplate()">📋 Copy</button>
+  </div>
+  <ol start="3">
+    <li><span class="de">Ersetze <code>[DEIN NAME]</code> und <code>[DEIN BERUF]</code></span><span class="en">Replace <code>[DEIN NAME]</code> and <code>[DEIN BERUF]</code></span></li>
+    <li><span class="de">Klicke <strong>„Commit changes..."</strong> → Schreibe: <code>README mit persönlichen Infos ergänzt</code> → <strong>„Commit changes"</strong></span><span class="en">Click <strong>"Commit changes..."</strong> → Write: <code>Updated README with personal info</code> → <strong>"Commit changes"</strong></span></li>
+  </ol>
+  <div class="checkpoint"><span class="de">✅ Deine README wird formatiert angezeigt. Das ist dein erster Commit!</span><span class="en">✅ Your README is now formatted. That's your first commit!</span></div>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">3</div><div class="step-title"><span class="de">Eine Datei hochladen</span><span class="en">Upload a file</span></div></div>
+  <ol>
+    <li><span class="de">Klicke <strong>„Add file"</strong> → <strong>„Upload files"</strong></span><span class="en">Click <strong>"Add file"</strong> → <strong>"Upload files"</strong></span></li>
+    <li><span class="de">Ziehe eine Datei rein — ein Foto, PDF, Textdatei, egal was</span><span class="en">Drag in any file — a photo, PDF, text file, anything</span></li>
+    <li><span class="de">Commit message: <code>Erste Datei hochgeladen</code> → <strong>„Commit changes"</strong></span><span class="en">Commit message: <code>First file uploaded</code> → <strong>"Commit changes"</strong></span></li>
+  </ol>
+  <div class="checkpoint"><span class="de">✅ Zwei Dateien in deinem Repo: README.md + dein Upload.</span><span class="en">✅ Two files in your repo: README.md + your upload.</span></div>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">4</div><div class="step-title"><span class="de">Dein Logbuch anschauen</span><span class="en">View your logbook</span></div></div>
+  <ol>
+    <li><span class="de">Kopiere die URL aus der Adresszeile — das ist dein Projekt, live im Internet</span><span class="en">Copy the URL from the address bar — that's your project, live on the internet</span></li>
+    <li><span class="de">Klicke auf <strong>„Commits"</strong> über der Dateiliste — das ist dein Logbuch</span><span class="en">Click <strong>"Commits"</strong> above the file list — that's your logbook</span></li>
+  </ol>
+  <div class="checkpoint"><span class="de">✅ Du siehst deine Commit-Historie — wer, wann, was. Das ist das Gedächtnis.</span><span class="en">✅ You see your commit history — who, when, what. That's the memory.</span></div>
+</div>
+
+<div class="celebration">
+  <h2>🎉 <span class="de">Modul 1 geschafft!</span><span class="en">Module 1 complete!</span></h2>
+  <p><span class="de">Du hast dein erstes Repository erstellt, eine README geschrieben, eine Datei hochgeladen und deine Commit-Historie angeschaut. <strong>Ohne Code. Ohne Terminal.</strong></span><span class="en">You created your first repository, wrote a README, uploaded a file, and viewed your commit history. <strong>No code. No terminal.</strong></span></p>
+</div>
+
+<h2><span class="de">📖 Glossar</span><span class="en">📖 Glossary</span></h2>
+<div class="glossary"><dl>
+  <dt>Repository (Repo)</dt><dd><span class="de">Ein Projektordner mit Gedächtnis. Speichert alle Dateien und ihre komplette Änderungshistorie.</span><span class="en">A project folder with memory. Stores all files and their complete change history.</span></dd>
+  <dt>Commit</dt><dd><span class="de">Ein gespeicherter Änderungsschritt — mit Zeitstempel, Name und Beschreibung. Wie ein Eintrag im Logbuch.</span><span class="en">A saved change step — with timestamp, name, and description. Like a logbook entry.</span></dd>
+  <dt>README.md</dt><dd><span class="de">Die Startseite deines Projekts. Wird automatisch angezeigt wenn jemand dein Repository besucht.</span><span class="en">The front page of your project. Displayed automatically when someone visits your repository.</span></dd>
+  <dt>Markdown</dt><dd><span class="de">Ein einfaches Textformat mit Formatierung (# für Überschriften, - für Listen, **fett**). Kein Code — nur Text mit Struktur.</span><span class="en">A simple text format with formatting (# for headings, - for lists, **bold**). Not code — just structured text.</span></dd>
+</dl></div>
+
+<div class="nav-footer">
+  <a href="curriculum.html" class="btn" style="background: var(--surface); color: var(--text); border: 1px solid var(--border);"><span class="de">← Übersicht</span><span class="en">← Curriculum</span></a>
+  <a href="modul2.html" class="btn"><span class="de">Modul 2 →</span><span class="en">Module 2 →</span></a>
+</div>
+</div>
+<footer><a href="curriculum.html"><span class="de">← Modulübersicht</span><span class="en">← Curriculum</span></a></footer>
+<script>
+function setLang(l){document.documentElement.lang=l;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');localStorage.setItem('lang',l)}
+function copyTemplate(){const t=document.getElementById('readme-template').innerText.replace('📋 Copy','').trim();navigator.clipboard.writeText(t);document.querySelector('.copy-btn').innerText='✅ Copied!';setTimeout(()=>document.querySelector('.copy-btn').innerText='📋 Copy',2000)}
+const s=localStorage.getItem('lang');if(s)setLang(s);
+</script>
+</body></html>

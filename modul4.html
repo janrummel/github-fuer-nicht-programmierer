@@ -13,7 +13,7 @@
   <button class="lang-btn" onclick="setLang('en')">EN</button>
 </div>
 <div class="container">
-<a href="index.html" class="back-link"><span class="de">← Übersicht</span><span class="en">← Overview</span></a>
+<a href="curriculum.html" class="back-link"><span class="de">← Übersicht</span><span class="en">← Overview</span></a>
 
 <h1><span class="de">Modul 4: Feedback ohne E-Mail-Ping-Pong</span><span class="en">Module 4: Feedback without email ping-pong</span></h1>
 <p class="subtitle"><span class="de">Branches, Pull Requests und Reviews — der strukturierte Weg zu besserer Zusammenarbeit.</span><span class="en">Branches, pull requests, and reviews — the structured path to better collaboration.</span></p>
@@ -94,7 +94,7 @@
   <a href="modul5.html" class="btn"><span class="de">Modul 5 →</span><span class="en">Module 5 →</span></a>
 </div>
 </div>
-<footer><a href="index.html"><span class="de">← Übersicht</span><span class="en">← Overview</span></a></footer>
+<footer><a href="curriculum.html"><span class="de">← Modulübersicht</span><span class="en">← Overview</span></a></footer>
 <script>
 function setLang(l){document.documentElement.lang=l;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');localStorage.setItem('lang',l)}
 const s=localStorage.getItem('lang');if(s)setLang(s);

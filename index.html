@@ -12,139 +12,25 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="GitHub für Nicht-Programmierer">
 <meta name="twitter:description" content="GitHub ist kein Programmier-Tool. Lerne es ohne Code — kostenlos.">
+<link rel="stylesheet" href="style.css">
 <style>
-  :root {
-    --bg: #0d1117; --surface: #161b22; --border: #30363d;
-    --text: #e6edf3; --muted: #7d8590; --accent: #58a6ff;
-    --green: #3fb950; --orange: #d29922;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', system-ui, sans-serif;
-    background: var(--bg); color: var(--text); min-height: 100vh;
-    line-height: 1.7;
-  }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  /* Language Switcher */
-  .lang-switch {
-    position: fixed; top: 1rem; right: 1.5rem; z-index: 100;
-    display: flex; gap: 0.25rem; background: var(--surface); border: 1px solid var(--border);
-    border-radius: 8px; padding: 0.2rem;
-  }
-  .lang-btn {
-    padding: 0.3rem 0.6rem; border-radius: 6px; border: none;
-    background: transparent; color: var(--muted); cursor: pointer;
-    font-size: 0.8rem; font-weight: 600; transition: all 0.2s;
-  }
-  .lang-btn.active { background: var(--accent); color: var(--bg); }
-  .lang-btn:hover:not(.active) { color: var(--text); }
-  [lang="de"] .en, [lang="en"] .de { display: none; }
-
-  /* Hero */
   .hero { text-align: center; padding: 5rem 2rem 2rem; max-width: 720px; margin: 0 auto; }
   .hero h1 { font-size: 2.4rem; font-weight: 800; line-height: 1.15; margin-bottom: 0.75rem; }
   .hero .subtitle { font-size: 1.1rem; color: var(--muted); max-width: 560px; margin: 0 auto 1rem; }
-  .badge {
-    display: inline-block; background: rgba(88,166,255,0.12); color: var(--accent);
-    padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 700;
-  }
-
-  /* Sections */
+  .badge { display: inline-block; background: rgba(88,166,255,0.12); color: var(--accent); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 700; }
   section { max-width: 720px; margin: 0 auto; padding: 3rem 2rem; }
   section h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem; }
   section h3 { font-size: 1.2rem; font-weight: 700; margin: 1.5rem 0 0.5rem; color: var(--accent); }
-
-  /* Cards */
-  .card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-    padding: 1.5rem; margin-bottom: 1rem; transition: transform 0.2s;
-  }
-  .card:hover { transform: translateY(-2px); }
-  .card-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
-  .card-muted { color: var(--muted); font-size: 0.85rem; }
-
-  /* Version chaos */
-  .version-list {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-    padding: 1.5rem; margin: 1rem 0;
-  }
+  .version-list { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin: 1rem 0; }
   .version-list .file { padding: 0.3rem 0; color: var(--muted); font-size: 0.95rem; }
   .version-list .file:last-child { color: var(--orange); font-weight: 600; }
-
-  /* Module grid */
-  .modules { display: grid; gap: 0.75rem; }
-  .module-card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-    padding: 1.25rem; display: flex; align-items: center; gap: 1rem;
-    transition: transform 0.2s;
-  }
-  .module-card:hover { transform: translateY(-2px); }
-  .module-card.active { border-color: var(--accent); }
-  .module-card.soon { opacity: 0.5; }
-  .module-num {
-    width: 40px; height: 40px; border-radius: 10px; display: flex;
-    align-items: center; justify-content: center; font-weight: 800;
-    font-size: 1.1rem; flex-shrink: 0;
-  }
-  .module-card.active .module-num { background: var(--accent); color: var(--bg); }
-  .module-card.soon .module-num { background: var(--border); color: var(--muted); }
-  .module-info { flex: 1; }
-  .module-title { font-weight: 700; font-size: 0.95rem; }
-  .module-desc { color: var(--muted); font-size: 0.8rem; margin-top: 0.15rem; }
-  .module-badge {
-    font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 10px; font-weight: 600;
-  }
-  .badge-live { background: rgba(63,185,80,0.15); color: var(--green); }
-  .badge-soon { background: rgba(125,133,144,0.15); color: var(--muted); }
-
-  /* CTA */
-  .cta-box {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-    padding: 2rem; text-align: center; margin: 2rem 0;
-  }
+  .card-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
+  .card-muted { color: var(--muted); font-size: 0.85rem; }
+  blockquote { border-left: 3px solid var(--accent); padding: 1rem 1.5rem; margin: 1rem 0; background: rgba(88,166,255,0.05); border-radius: 0 8px 8px 0; font-size: 1.05rem; font-weight: 600; }
+  .highlight { color: var(--accent); font-weight: 600; }
+  .cta-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; text-align: center; margin: 2rem 0; }
   .cta-box h3 { color: var(--text); margin-bottom: 0.5rem; }
   .cta-box p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
-  .btn {
-    display: inline-block; background: var(--accent); color: var(--bg); padding: 0.75rem 2rem;
-    border-radius: 8px; font-weight: 700; font-size: 1rem; border: none; cursor: pointer;
-    transition: opacity 0.2s; text-decoration: none;
-  }
-  .btn:hover { opacity: 0.9; text-decoration: none; }
-
-  /* Email form */
-  .email-form { max-width: 400px; margin: 0 auto; }
-  .email-form input {
-    width: 100%; padding: 0.75rem; font-size: 1rem; border: 1px solid var(--border);
-    border-radius: 8px; background: var(--bg); color: var(--text); margin-bottom: 0.75rem;
-  }
-  .email-form input::placeholder { color: var(--muted); }
-  .email-form button {
-    width: 100%; padding: 0.75rem; font-size: 1rem; font-weight: 700;
-    background: var(--accent); color: var(--bg); border: none; border-radius: 8px; cursor: pointer;
-  }
-  .email-form button:hover { opacity: 0.9; }
-
-  /* Blockquote */
-  blockquote {
-    border-left: 3px solid var(--accent); padding: 1rem 1.5rem; margin: 1rem 0;
-    background: rgba(88,166,255,0.05); border-radius: 0 8px 8px 0;
-    font-size: 1.05rem; font-weight: 600;
-  }
-
-  /* Trust bar */
-  .trust { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 1rem; }
-
-  /* Footer */
-  footer {
-    text-align: center; padding: 2rem; color: var(--muted); font-size: 0.8rem;
-    border-top: 1px solid var(--border); max-width: 720px; margin: 2rem auto 0;
-  }
-
-  /* Highlight */
-  .highlight { color: var(--accent); font-weight: 600; }
-
   @media (max-width: 600px) {
     .hero h1 { font-size: 1.8rem; }
     .hero { padding: 4rem 1.25rem 1.5rem; }
@@ -154,7 +40,6 @@
 </head>
 <body>
 
-<!-- Language Switcher -->
 <div class="lang-switch">
   <button class="lang-btn active" onclick="setLang('de')">DE</button>
   <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -267,122 +152,21 @@
   </p>
 </section>
 
-<!-- Challenge CTA -->
+<!-- CTA -->
 <section>
   <div class="cta-box">
     <h3>
-      <span class="de">🛠️ Hands-On Challenge</span>
-      <span class="en">🛠️ Hands-On Challenge</span>
+      <span class="de">🚀 Bereit? 6 Module, komplett kostenlos.</span>
+      <span class="en">🚀 Ready? 6 modules, completely free.</span>
     </h3>
     <p>
-      <span class="de">In 20 Minuten erstellst du dein erstes GitHub-Repository. Ohne Code, ohne Vorkenntnisse. Nur ein Browser.</span>
-      <span class="en">Create your first GitHub repository in 20 minutes. No code, no prerequisites. Just a browser.</span>
+      <span class="de">Kein Account nötig. Kein Upsell. Einfach loslegen.</span>
+      <span class="en">No account needed. No upsell. Just start.</span>
     </p>
-    <a href="challenge.html" class="btn">
-      <span class="de">Challenge starten →</span>
-      <span class="en">Start Challenge →</span>
+    <a href="curriculum.html" class="btn">
+      <span class="de">Zur Modulübersicht →</span>
+      <span class="en">View curriculum →</span>
     </a>
-  </div>
-</section>
-
-<!-- Email Signup 1 -->
-<section>
-  <div class="cta-box">
-    <h3>
-      <span class="de">📬 Workshops & Updates</span>
-      <span class="en">📬 Workshops & Updates</span>
-    </h3>
-    <p>
-      <span class="de">Kein Spam. Nur Updates zu neuen Inhalten und Workshop-Terminen.</span>
-      <span class="en">No spam. Just updates on new content and workshop dates.</span>
-    </p>
-    <form action="https://formspree.io/f/DEINE-FORM-ID" method="POST" class="email-form">
-      <input type="email" name="email" placeholder="jan@beispiel.de" required>
-      <button type="submit">
-        <span class="de">Auf dem Laufenden bleiben →</span>
-        <span class="en">Stay updated →</span>
-      </button>
-    </form>
-  </div>
-</section>
-
-<!-- Modules -->
-<section>
-  <h2>
-    <span class="de">Die Lernreise</span>
-    <span class="en">The Learning Path</span>
-  </h2>
-  <div class="modules">
-    <a href="#" class="module-card active" style="text-decoration:none; color:inherit;">
-      <div class="module-num">1</div>
-      <div class="module-info">
-        <div class="module-title"><span class="de">GitHub ist nicht was du denkst</span><span class="en">GitHub is not what you think</span></div>
-        <div class="module-desc"><span class="de">Repository, Version Control, erste Schritte</span><span class="en">Repository, version control, first steps</span></div>
-      </div>
-      <span class="module-badge badge-live">✅ Live</span>
-    </a>
-    <a href="modul2.html" class="module-card active" style="text-decoration:none;color:inherit;">
-      <div class="module-num">2</div>
-      <div class="module-info">
-        <div class="module-title"><span class="de">Schluss mit v3_final_FINAL</span><span class="en">No more v3_final_FINAL</span></div>
-        <div class="module-desc"><span class="de">Dateien hochladen, ändern, Historie verstehen</span><span class="en">Upload files, make changes, understand history</span></div>
-      </div>
-      <span class="module-badge badge-live">✅ Live</span>
-    </a>
-    <a href="modul3.html" class="module-card active" style="text-decoration:none;color:inherit;">
-      <div class="module-num">3</div>
-      <div class="module-info">
-        <div class="module-title"><span class="de">Projekte sichtbar machen</span><span class="en">Make projects visible</span></div>
-        <div class="module-desc"><span class="de">Issues & Projects als Kanban-Board</span><span class="en">Issues & Projects as Kanban board</span></div>
-      </div>
-      <span class="module-badge badge-live">✅ Live</span>
-    </a>
-    <a href="modul4.html" class="module-card active" style="text-decoration:none;color:inherit;">
-      <div class="module-num">4</div>
-      <div class="module-info">
-        <div class="module-title"><span class="de">Feedback ohne E-Mail-Ping-Pong</span><span class="en">Feedback without email ping-pong</span></div>
-        <div class="module-desc"><span class="de">Pull Requests für Texte, Konzepte, Policies</span><span class="en">Pull requests for texts, concepts, policies</span></div>
-      </div>
-      <span class="module-badge badge-live">✅ Live</span>
-    </a>
-    <a href="modul5.html" class="module-card active" style="text-decoration:none;color:inherit;">
-      <div class="module-num">5</div>
-      <div class="module-info">
-        <div class="module-title"><span class="de">In 10 Minuten live</span><span class="en">Live in 10 minutes</span></div>
-        <div class="module-desc"><span class="de">GitHub Pages — deine eigene Seite</span><span class="en">GitHub Pages — your own website</span></div>
-      </div>
-      <span class="module-badge badge-live">✅ Live</span>
-    </a>
-    <a href="modul6.html" class="module-card active" style="text-decoration:none;color:inherit;">
-      <div class="module-num">6</div>
-      <div class="module-info">
-        <div class="module-title"><span class="de">Dein GitHub-Gameplan</span><span class="en">Your GitHub gameplan</span></div>
-        <div class="module-desc"><span class="de">Konkreter Anwendungsfall aus deinem Alltag</span><span class="en">Concrete use case from your daily work</span></div>
-      </div>
-      <span class="module-badge badge-live">✅ Live</span>
-    </a>
-  </div>
-</section>
-
-<!-- Social Proof -->
-<section>
-  <div class="trust">
-    <span class="de"><!-- [Nach Beta-Phase: Teilnehmerzahl + Testimonials ergänzen] --></span>
-    <span class="en"><!-- [After beta: add participant count + testimonials] --></span>
-  </div>
-</section>
-
-<!-- Objection Handling -->
-<section>
-  <div class="card" style="text-align: center;">
-    <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;">
-      <span class="de">Komplett kostenlos. Kein Upsell, kein Haken.</span>
-      <span class="en">Completely free. No upsell, no catch.</span>
-    </p>
-    <p class="card-muted">
-      <span class="de">Fragen? <a href="https://linkedin.com/in/janrummel">Schreib mir auf LinkedIn.</a></span>
-      <span class="en">Questions? <a href="https://linkedin.com/in/janrummel">Message me on LinkedIn.</a></span>
-    </p>
   </div>
 </section>
 
@@ -402,24 +186,17 @@
   </p>
 </section>
 
-<!-- Email Signup 2 -->
+<!-- Objection -->
 <section>
-  <div class="cta-box">
-    <h3>
-      <span class="de">📬 Workshops & Updates</span>
-      <span class="en">📬 Workshops & Updates</span>
-    </h3>
-    <p>
-      <span class="de">Trag dich ein — ich informiere dich über neue Inhalte und Workshop-Termine.</span>
-      <span class="en">Sign up — I'll let you know about new content and workshop dates.</span>
+  <div class="card" style="text-align: center;">
+    <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;">
+      <span class="de">Komplett kostenlos. Kein Upsell, kein Haken.</span>
+      <span class="en">Completely free. No upsell, no catch.</span>
     </p>
-    <form action="https://formspree.io/f/DEINE-FORM-ID" method="POST" class="email-form">
-      <input type="email" name="email" placeholder="jan@beispiel.de" required>
-      <button type="submit">
-        <span class="de">Auf dem Laufenden bleiben →</span>
-        <span class="en">Stay updated →</span>
-      </button>
-    </form>
+    <p class="card-muted">
+      <span class="de">Fragen? <a href="https://linkedin.com/in/janrummel">Schreib mir auf LinkedIn.</a></span>
+      <span class="en">Questions? <a href="https://linkedin.com/in/janrummel">Message me on LinkedIn.</a></span>
+    </p>
   </div>
 </section>
 
@@ -434,16 +211,7 @@
 </footer>
 
 <script>
-function setLang(lang) {
-  document.documentElement.lang = lang;
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
-  localStorage.setItem('lang', lang);
-}
-// Restore
-const saved = localStorage.getItem('lang');
-if (saved) setLang(saved);
+function setLang(l){document.documentElement.lang=l;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');localStorage.setItem('lang',l)}
+const s=localStorage.getItem('lang');if(s)setLang(s);
 </script>
-
-</body>
-</html>
+</body></html>

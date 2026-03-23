@@ -34,7 +34,7 @@
   <button class="lang-btn" onclick="setLang('en')">EN</button>
 </div>
 <div class="container">
-<a href="index.html" class="back-link"><span class="de">← Übersicht</span><span class="en">← Overview</span></a>
+<a href="curriculum.html" class="back-link"><span class="de">← Übersicht</span><span class="en">← Overview</span></a>
 
 <h1><span class="de">Modul 6: Dein GitHub-Gameplan</span><span class="en">Module 6: Your GitHub Gameplan</span></h1>
 <p class="subtitle"><span class="de">Finde deinen konkreten Anwendungsfall — und überzeuge dein Team.</span><span class="en">Find your concrete use case — and convince your team.</span></p>
@@ -154,7 +154,7 @@
   <p style="font-size:1.1rem; font-weight:700; margin-bottom:0.75rem;"><span class="de">Hat dir die Lernreise geholfen?</span><span class="en">Did this learning journey help you?</span></p>
   <p style="color:var(--muted); margin-bottom:1rem;"><span class="de">Teile sie mit jemandem, der auch vor der „Programmier-Wand" steht.</span><span class="en">Share it with someone who also faces the "programming wall."</span></p>
   <a href="https://linkedin.com/in/janrummel" class="btn" style="margin-right:0.5rem;"><span class="de">Jan auf LinkedIn</span><span class="en">Jan on LinkedIn</span></a>
-  <a href="index.html" class="btn" style="background: var(--surface); color: var(--text); border: 1px solid var(--border);"><span class="de">← Zur Übersicht</span><span class="en">← To overview</span></a>
+  <a href="curriculum.html" class="btn" style="background: var(--surface); color: var(--text); border: 1px solid var(--border);"><span class="de">← Modulübersicht</span><span class="en">← To overview</span></a>
 </div>
 
 <h2><span class="de">📖 Gesamtglossar</span><span class="en">📖 Complete Glossary</span></h2>
@@ -174,10 +174,10 @@
 
 <div class="nav-footer">
   <a href="modul5.html" class="btn" style="background: var(--surface); color: var(--text); border: 1px solid var(--border);"><span class="de">← Modul 5</span><span class="en">← Module 5</span></a>
-  <a href="index.html" class="btn"><span class="de">Zur Übersicht →</span><span class="en">To overview →</span></a>
+  <a href="curriculum.html" class="btn"><span class="de">Modulübersicht →</span><span class="en">To overview →</span></a>
 </div>
 </div>
-<footer><a href="index.html"><span class="de">← Übersicht</span><span class="en">← Overview</span></a></footer>
+<footer><a href="curriculum.html"><span class="de">← Modulübersicht</span><span class="en">← Overview</span></a></footer>
 <script>
 function setLang(l){document.documentElement.lang=l;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');localStorage.setItem('lang',l)}
 const s=localStorage.getItem('lang');if(s)setLang(s);

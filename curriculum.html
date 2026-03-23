@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curriculum — GitHub für Nicht-Programmierer</title>
+<meta name="description" content="Alle 6 Module der Lernreise im Überblick. Vom ersten Repository bis zum eigenen Gameplan.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .modules { display: grid; gap: 0.75rem; }
+  .module-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; display: flex; align-items: center; gap: 1rem;
+    transition: all 0.2s; text-decoration: none; color: var(--text);
+    border-left: 4px solid var(--accent);
+  }
+  .module-card:hover { transform: translateY(-2px); border-color: var(--accent); text-decoration: none; }
+  .module-num {
+    width: 44px; height: 44px; background: var(--accent); color: var(--bg);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.1rem; flex-shrink: 0;
+  }
+  .module-info { flex: 1; }
+  .module-title { font-weight: 700; font-size: 1rem; }
+  .module-desc { color: var(--muted); font-size: 0.8rem; margin-top: 0.15rem; }
+  .module-meta { color: var(--muted); font-size: 0.7rem; margin-top: 0.3rem; }
+  .progress-bar { margin: 2rem 0; }
+  .progress-label { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .progress-track { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; height: 8px; overflow: hidden; }
+  .progress-fill { background: var(--accent); height: 100%; border-radius: 8px; width: 0%; transition: width 0.5s; }
+  .intro-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.5rem; margin-bottom: 2rem; text-align: center;
+  }
+  .intro-card p { color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <button class="lang-btn active" onclick="setLang('de')">DE</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+</div>
+
+<div class="container">
+<a href="index.html" class="back-link"><span class="de">← Startseite</span><span class="en">← Home</span></a>
+
+<h1><span class="de">Die Lernreise</span><span class="en">The Learning Path</span></h1>
+<p class="subtitle"><span class="de">6 Module · Hands-On · Kein Code · DE + EN</span><span class="en">6 Modules · Hands-On · No Code · EN + DE</span></p>
+
+<div class="intro-card">
+  <p><span class="de">Arbeite die Module der Reihe nach durch. Jedes Modul hat Hands-On Steps mit Checkpoints — du lernst durch Machen, nicht durch Zuschauen.</span><span class="en">Work through the modules in order. Each module has hands-on steps with checkpoints — you learn by doing, not watching.</span></p>
+</div>
+
+<div class="modules">
+  <a href="modul1.html" class="module-card">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <div class="module-title"><span class="de">GitHub ist nicht was du denkst</span><span class="en">GitHub is not what you think</span></div>
+      <div class="module-desc"><span class="de">Dein erstes Repository erstellen, README schreiben, erste Commits verstehen</span><span class="en">Create your first repository, write a README, understand first commits</span></div>
+      <div class="module-meta"><span class="de">⏱ ca. 20 Minuten · 5 Steps</span><span class="en">⏱ ~20 minutes · 5 steps</span></div>
+    </div>
+  </a>
+
+  <a href="modul2.html" class="module-card">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <div class="module-title"><span class="de">Schluss mit v3_final_FINAL</span><span class="en">No more v3_final_FINAL</span></div>
+      <div class="module-desc"><span class="de">Dateien bearbeiten, sinnvolle Commit-Messages, Diffs lesen, alte Versionen wiederherstellen</span><span class="en">Edit files, meaningful commit messages, read diffs, restore old versions</span></div>
+      <div class="module-meta"><span class="de">⏱ ca. 25 Minuten · 5 Steps</span><span class="en">⏱ ~25 minutes · 5 steps</span></div>
+    </div>
+  </a>
+
+  <a href="modul3.html" class="module-card">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <div class="module-title"><span class="de">Projekte sichtbar machen</span><span class="en">Make projects visible</span></div>
+      <div class="module-desc"><span class="de">Issues erstellen, Labels vergeben, Kanban-Board mit GitHub Projects aufsetzen</span><span class="en">Create issues, assign labels, set up Kanban board with GitHub Projects</span></div>
+      <div class="module-meta"><span class="de">⏱ ca. 25 Minuten · 5 Steps</span><span class="en">⏱ ~25 minutes · 5 steps</span></div>
+    </div>
+  </a>
+
+  <a href="modul4.html" class="module-card">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <div class="module-title"><span class="de">Feedback ohne E-Mail-Ping-Pong</span><span class="en">Feedback without email ping-pong</span></div>
+      <div class="module-desc"><span class="de">Branches erstellen, Pull Requests öffnen, Reviews schreiben, Mergen</span><span class="en">Create branches, open pull requests, write reviews, merge</span></div>
+      <div class="module-meta"><span class="de">⏱ ca. 30 Minuten · 5 Steps</span><span class="en">⏱ ~30 minutes · 5 steps</span></div>
+    </div>
+  </a>
+
+  <a href="modul5.html" class="module-card">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <div class="module-title"><span class="de">In 10 Minuten live</span><span class="en">Live in 10 minutes</span></div>
+      <div class="module-desc"><span class="de">GitHub Pages aktivieren, Markdown schreiben, eigene Website veröffentlichen</span><span class="en">Activate GitHub Pages, write Markdown, publish your own website</span></div>
+      <div class="module-meta"><span class="de">⏱ ca. 20 Minuten · 5 Steps</span><span class="en">⏱ ~20 minutes · 5 steps</span></div>
+    </div>
+  </a>
+
+  <a href="modul6.html" class="module-card">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <div class="module-title"><span class="de">Dein GitHub-Gameplan</span><span class="en">Your GitHub Gameplan</span></div>
+      <div class="module-desc"><span class="de">Entscheidungsmatrix, eigenen Anwendungsfall umsetzen, Team überzeugen</span><span class="en">Decision matrix, implement your own use case, convince your team</span></div>
+      <div class="module-meta"><span class="de">⏱ ca. 30 Minuten · 3 Steps</span><span class="en">⏱ ~30 minutes · 3 steps</span></div>
+    </div>
+  </a>
+</div>
+
+<div style="text-align:center; margin: 2.5rem 0;">
+  <p style="color:var(--muted); font-size:0.9rem; margin-bottom:0.5rem;">
+    <span class="de">Gesamtdauer: ca. 2.5 Stunden · Alles im Browser · Kein Setup nötig</span>
+    <span class="en">Total time: ~2.5 hours · Everything in the browser · No setup needed</span>
+  </p>
+  <a href="modul1.html" class="btn">
+    <span class="de">Mit Modul 1 starten →</span>
+    <span class="en">Start with Module 1 →</span>
+  </a>
+</div>
+
+</div>
+
+<footer>
+  <a href="index.html"><span class="de">← Startseite</span><span class="en">← Home</span></a>
+  ·
+  <a href="https://github.com/planck-lab/github-fuer-nicht-programmierer">
+    <span class="de">Quellcode auf GitHub</span><span class="en">Source on GitHub</span>
+  </a>
+</footer>
+
+<script>
+function setLang(l){document.documentElement.lang=l;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');localStorage.setItem('lang',l)}
+const s=localStorage.getItem('lang');if(s)setLang(s);
+</script>
+</body></html>

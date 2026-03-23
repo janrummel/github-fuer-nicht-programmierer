@@ -13,14 +13,14 @@
   <button class="lang-btn" onclick="setLang('en')">EN</button>
 </div>
 <div class="container">
-<a href="index.html" class="back-link"><span class="de">← Übersicht</span><span class="en">← Overview</span></a>
+<a href="curriculum.html" class="back-link"><span class="de">← Übersicht</span><span class="en">← Overview</span></a>
 
 <h1><span class="de">Modul 2: Schluss mit v3_final_FINAL</span><span class="en">Module 2: No more v3_final_FINAL</span></h1>
 <p class="subtitle"><span class="de">Dateien ändern, Commits verstehen, alte Versionen wiederherstellen.</span><span class="en">Edit files, understand commits, restore old versions.</span></p>
 
 <div class="tip">
-  <span class="de">💡 Voraussetzung: Du hast ein Repository aus Modul 1. Falls nicht, <a href="challenge.html">erstelle zuerst eins</a>.</span>
-  <span class="en">💡 Prerequisite: You have a repository from Module 1. If not, <a href="challenge.html">create one first</a>.</span>
+  <span class="de">💡 Voraussetzung: Du hast ein Repository aus Modul 1. Falls nicht, <a href="modul1.html">erstelle zuerst eins</a>.</span>
+  <span class="en">💡 Prerequisite: You have a repository from Module 1. If not, <a href="modul1.html">create one first</a>.</span>
 </div>
 
 <h2><span class="de">Was ist ein Commit?</span><span class="en">What is a commit?</span></h2>
@@ -100,11 +100,11 @@
 </dl></div>
 
 <div class="nav-footer">
-  <a href="challenge.html" class="btn" style="background: var(--surface); color: var(--text); border: 1px solid var(--border);"><span class="de">← Modul 1</span><span class="en">← Module 1</span></a>
+  <a href="modul1.html" class="btn" style="background: var(--surface); color: var(--text); border: 1px solid var(--border);"><span class="de">← Modul 1</span><span class="en">← Module 1</span></a>
   <a href="modul3.html" class="btn"><span class="de">Modul 3 →</span><span class="en">Module 3 →</span></a>
 </div>
 </div>
-<footer><a href="index.html"><span class="de">← Übersicht</span><span class="en">← Overview</span></a></footer>
+<footer><a href="curriculum.html"><span class="de">← Modulübersicht</span><span class="en">← Overview</span></a></footer>
 <script>
 function setLang(l){document.documentElement.lang=l;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');localStorage.setItem('lang',l)}
 const s=localStorage.getItem('lang');if(s)setLang(s);
