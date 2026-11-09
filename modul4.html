@@ -8,6 +8,8 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📁</text></svg>">
 <link rel="stylesheet" href="https://janrummel.github.io/ai-learning/shared-style.css">
 <link rel="stylesheet" href="style.css">
+<script src="https://janrummel.github.io/ai-learning/jr.js"></script>
+<link rel="stylesheet" href="https://janrummel.github.io/ai-learning/jr.css">
 </head>
 <body>
 <a href="#main-content" class="skip-link"><span class="de">Zum Inhalt springen</span><span class="en">Skip to content</span></a>
@@ -171,8 +173,8 @@
   </div>
 
   <div style="font-size:0.78rem; color:var(--muted); background:var(--surface); border-radius:6px; padding:0.5rem 0.75rem; margin:0.75rem 0; border-left:2px solid #a78bfa;">
-    <span class="de">📚 „Code review suggestions make the reviewers' feedback more actionable for the submitters and represent valuable knowledge for newcomers." (<a href="https://arxiv.org/html/2502.04835v1" target="_blank" style="color:#a78bfa;">Bouraffa et al., 2025, arXiv</a>)</span>
-    <span class="en">📚 "Code review suggestions make the reviewers' feedback more actionable for the submitters and represent valuable knowledge for newcomers." (<a href="https://arxiv.org/html/2502.04835v1" target="_blank" style="color:#a78bfa;">Bouraffa et al., 2025, arXiv</a>)</span>
+    <span class="de">📚 „Code review suggestions make the reviewers' feedback more actionable for the submitters and represent valuable knowledge for newcomers." (<a href="https://arxiv.org/html/2502.04835v1" target="_blank" style="color:var(--purple,#a78bfa);">Bouraffa et al., 2025, arXiv</a>)</span>
+    <span class="en">📚 "Code review suggestions make the reviewers' feedback more actionable for the submitters and represent valuable knowledge for newcomers." (<a href="https://arxiv.org/html/2502.04835v1" target="_blank" style="color:var(--purple,#a78bfa);">Bouraffa et al., 2025, arXiv</a>)</span>
   </div>
 
   <p><span class="de">👉 <strong>Nächster Schritt:</strong> In Modul 5 wird dein Repository zu einer echten Website — in 10 Minuten, kostenlos, ohne Hosting-Setup.</span>
@@ -213,6 +215,8 @@
 
 </main>
 <footer role="contentinfo"><a href="curriculum.html"><span class="de">← Modulübersicht</span><span class="en">← Overview</span></a></footer>
+<div class="jr-fuss" role="contentinfo" aria-label="Anbieter">Von Jan Rummel · <a href="https://janrummel.eu/?ref=github-fuer-nicht-programmierer">janrummel.eu</a> · <a href="https://janrummel.eu/impressum.html">Impressum</a> · <a href="https://janrummel.eu/datenschutz.html">Datenschutz</a></div>
+
 <script>
 function setLang(l){document.documentElement.lang=l;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');localStorage.setItem('lang',l)}
 const s=localStorage.getItem('lang');if(s)setLang(s);
