@@ -104,7 +104,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 }
 /* Source Citation */
 .source { font-size: 0.78rem; color: var(--muted); background: var(--surface); border-radius: 6px; padding: 0.5rem 0.75rem; margin: 0.75rem 0; border-left: 2px solid #a78bfa; }
-.source a { color: #a78bfa; }
+.source a { color: var(--purple, #a78bfa); }
 
 /* Comparison Cards */
 .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }

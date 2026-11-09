@@ -29,6 +29,8 @@
   .summary-card .label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; margin-top: 0.25rem; }
   @media (max-width: 600px) { .summary-grid { grid-template-columns: 1fr; } }
 </style>
+<script src="https://janrummel.github.io/ai-learning/jr.js"></script>
+<link rel="stylesheet" href="https://janrummel.github.io/ai-learning/jr.css">
 </head>
 <body>
 <a href="#main-content" class="skip-link"><span class="de">Zum Inhalt springen</span><span class="en">Skip to content</span></a>
@@ -286,6 +288,8 @@
 
 </main>
 <footer role="contentinfo"><a href="curriculum.html"><span class="de">← Modulübersicht</span><span class="en">← Overview</span></a></footer>
+<div class="jr-fuss" role="contentinfo" aria-label="Anbieter">Von Jan Rummel · <a href="https://janrummel.eu/?ref=github-fuer-nicht-programmierer">janrummel.eu</a> · <a href="https://janrummel.eu/impressum.html">Impressum</a> · <a href="https://janrummel.eu/datenschutz.html">Datenschutz</a></div>
+
 <script>
 function setLang(l){document.documentElement.lang=l;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');localStorage.setItem('lang',l)}
 const s=localStorage.getItem('lang');if(s)setLang(s);
